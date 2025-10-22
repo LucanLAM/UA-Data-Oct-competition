@@ -52,7 +52,7 @@ Eric 黃EMT T1.5 +10
 The file **`openfile.cpp`** is responsible for cleaning and organising raw match data from the input file **`DataUA`**, and storing the processed results in a CSV file for further analysis.
 
 ### Cleaned and Organised Format
-After processing, the data is structured into a consistent and machine-readable format:
+After processing, the data is structured into a consistent and machine-readable format:  
 \<Player name\>,\<Card Name\>,\<Tier\>,\<Result (Win/Loss)\>
 
 For example, the following line should be organised to the:\
