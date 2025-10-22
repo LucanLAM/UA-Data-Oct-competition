@@ -21,7 +21,7 @@ The game host recorded all match data in a notebook app on his phone.
 This program was created to clean, organise, and analyse that raw data using C++, turning unstructured notes into clear, meaningful performance statistics.
 
 ## Data Interpretation
-In each round of the game, there are two records written by the game host. They are:\
+In each round of the game, the game host records two entries. They are:\
 \<Player 1 name\>,\<Player 1 Card Name\>,\<Tier\>,\<Result (Win/Loss)\>\
 \<Player 2 name\>,\<Player 2 Card Name\>,\<Tier\>,\<Result (Win/Loss)\>\
 However, the game host's records are inconsistent. Missing tier, same player or card has a different name. Therefore, it needs some manual modification.
@@ -119,7 +119,7 @@ tier_difference > 0 && ((round.record1.result == 0 && (round.record1.tier<round.
 ```
 
 ## Conclusion
-The **'stas_analysis.cpp.cpp'** handles the following analysis.  
+The **`stas_analysis.cpp.cpp`** handles the following analysis.  
 The following table shows the performance when two players use different tier cards:
 
 | Tier Difference | Rounds | Win Rate | EV |
