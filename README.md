@@ -57,5 +57,20 @@ The candidate for the seperator are the following:
 
 If the program cannot detect the required separators, it cannot correctly extract the data fields. In such cases, the line will be considered as **unreadable**, and the program will prompt the user to manually review and modify the entry.
 
+## Check duplication
+The file **`UA_dup.cpp`** is responsible for generating a unique list of player names and card types. Since the game host occasionally used inconsistent naming conventions (e.g., `Ray` and `RAY`, `Francis` and `FFC`, `羽川` and `紫物語`), the program helps identify potential duplicates so the user can review and unify them manually.
 
+## Score Calculation
+Every players have a initial score of 40. The tier rank from highest (1) to lowest (5) with increamentation of 0.5. When a player win, he/she gain points and their opponent reduce point. Note that the sum of points gained and point deduced are zero. Also, a player cannot has score lower than zero. If a player who score 10 loss a round and need to reduce his/her point by 20. His/her final score will be 0.\
+The score calculation is seperated into two part, simple and complex. If a player use a lower tier card against a player who use a higher tier and win, the player gain extra point by following the complex score calculation. The following table show the condition that a complex score calculation is needed.
 
+| Player 1 result (win = 1, loss = 0) |Tier difference (no = 0, yes = 1) | Is player 1 has higher tier (no = 0, yes = 1) | Simple (0) or Complex (1) | pos or neg score (pos = 1, neg = 0) |
+|:-:|:-:|:-:|:-:|:-:|
+| 0 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 1 | 0 | 0 |
+| 0 | 1 | 0 | 0 | 0 |
+| 0 | 1 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 0 | 1 |
+| 1 | 0 | 1 | 0 | 1 |
+| 1 | 1 | 0 | 1 | 1 |
+| 1 | 1 | 1 | 0 | 1 |
