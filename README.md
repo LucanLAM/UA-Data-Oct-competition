@@ -61,8 +61,17 @@ If the program cannot detect the required separators, it cannot correctly extrac
 The file **`UA_dup.cpp`** is responsible for generating a unique list of player names and card types. Since the game host occasionally used inconsistent naming conventions (e.g., `Ray` and `RAY`, `Francis` and `FFC`, `羽川` and `紫物語`), the program helps identify potential duplicates so the user can review and unify them manually.
 
 ## Score Calculation
-Every players have a initial score of 40. The tier rank from highest (1) to lowest (5) with increamentation of 0.5. When a player win, he/she gain points and their opponent reduce point. Note that the sum of points gained and point deduced are zero. Also, a player cannot has score lower than zero. If a player who score 10 loss a round and need to reduce his/her point by 20. His/her final score will be 0.\
-The score calculation is seperated into two part, simple and complex. If a player use a lower tier card against a player who use a higher tier and win, the player gain extra point by following the complex score calculation. The following table show the condition that a complex score calculation is needed.
+Each player starts with an initial score of **40**.  
+The tier ranking ranges from **1 (highest)** to **5 (lowest)**, increasing in increments of **0.5**. When a player wins, they gain points, and their opponent loses the same number of points The total change in score for both players in a round always sums to **zero**. However, a player’s score cannot drop below **0** — for example, if a player with 10 points loses a round and should lose 20 points, their final score will be set to **0**.
+
+The score calculation is divided into two parts:
+
+- **Simple Calculation:** Used when both players are of the same tier. Or a player who uses a lower-tier card loses to a player who uses a higher-tier card.  
+- **Complex Calculation:** Used when players have different tiers.  
+  - If a lower-tier player defeats a higher-tier opponent, they gain **extra points** as a reward.
+  - Conversely, if a higher-tier player loses to a lower-tier opponent, they lose **additional points**.
+
+The table below shows the conditions under which the **complex score calculation** is applied.
 
 | Player 1 result (win = 1, loss = 0) |Tier difference (no = 0, yes = 1) | Is player 1 has higher tier (no = 0, yes = 1) | Simple (0) or Complex (1) | pos or neg score (pos = 1, neg = 0) |
 |:-:|:-:|:-:|:-:|:-:|
