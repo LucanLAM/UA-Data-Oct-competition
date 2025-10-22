@@ -1,4 +1,61 @@
 # UA-Data-Oct-competition
-This C++ program processes and analyzes messy player performance data. It automatically cleans, structures, and computes meaningful statistics such as win rates and expected values based on tier differences between players. The tool is designed to make sense of inconsistent data and extract insights into player performance trends.
+This C++ program processes and analyses messy player performance data. It automatically cleans, structures, and computes meaningful statistics such as win rates and expected values based on tier differences between players. The tool is designed to make sense of inconsistent data and extract insights into player performance trends.
 
-# Background
+## Background
+My friend and I participated in a UA competition from September to October 2025, which lasted for four weeks.
+The game host recorded all match data in a notebook app on his phone.
+This program was created to clean, organise, and analyse that raw data using C++, turning unstructured notes into clear, meaningful performance statistics.
+
+## Clean and Organise Data
+
+The file **`openfile.cpp`** is responsible for cleaning and organising raw match data from the input file **`DataUA`**, and storing the processed results in a CSV file for further analysis.
+
+### Raw Data Example
+Below are examples of the unprocessed data as recorded by the game host:
+
+YMH:紫坂 T1.5 W +10\
+YWH:手指 T1.5 -10
+
+YMH:黃坂 T1.5 L-10\
+YWH:早乙女T1.5 W+10
+
+YMH:綠雀頭 T1.5 W+10\
+Eric:黃EMT T1.5 L-10
+
+YWH:早乙女 T1.5 -10\
+Francis:紫EMT T1.5 +10
+
+YWH:兵長 T2 -10\
+Francis:忍野 T1.5 +10
+
+YWH:早乙女 T1.5 -10 （先功 AP抽4次0 零費）\
+Eric:黃EMT T1.5 +10
+
+### Cleaned and Organised Format
+After processing, the data is structured into a consistent and machine-readable format:
+\<Player name\>,\<Card Name\>,\<Tier\>,\<Result (Win/Loss)\>
+
+For example, the following line should organised to the:\
+YMH:綠雀頭 T1.5 W+10\
+YMH,綠雀頭,1.5,1
+
+Here, **1** represents a win and **0** represents a loss.
+
+Since the original data is often inconsistent or incomplete, the program attempts to interpret and extract valid information automatically. If it cannot determine the correct structure, it outputs the problematic line and prompts the user to review and modify it manually.
+
+### Separator Detection
+The program attempts to identify **separators** that divide each piece of information within a raw data line.\
+Expected general format:\
+\<Player name\>\<Seperator 1\>\<Card Name\>\<Seperator 2\>\<Tier\>\<Seperator 3\>\<Result (Win/Loss)\>
+
+The candidate for the seperator are the following:
+| Seperator   | Candidates                     |
+|-------------|:------------------------------:|
+| Seperator 1 | Whitespace " ", ":"            |
+| Seperator 2 | "T" or "t" followed by a number|
+| Seperator 3 | "w", "l", "+", "-"             |
+
+If the program cannot detect the required separators, it cannot correctly extract the data fields. In such cases, the line will be considered as **unreadable**, and the program will prompt the user to manually review and modify the entry.
+
+
+
