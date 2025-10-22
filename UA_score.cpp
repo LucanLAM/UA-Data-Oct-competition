@@ -14,7 +14,7 @@ namespace UAData {
 }
 std::vector<std::string> players_name = {"TTW", "LYP", "YMH", "YWH", "Eric", "Nam", "Francis", "Ray"};
 
-struct Recode {
+struct record {
     std::string playerName;
     std::string cardType;
     float tier;
@@ -22,8 +22,8 @@ struct Recode {
 };
 
 struct Round {
-    Recode recode1;
-    Recode recode2;
+    record record1;
+    record record2;
 };
 
 class Player {
@@ -40,7 +40,7 @@ public:
             : 0.0f;
     }
 
-    std::vector<int> score_recodes;
+    std::vector<int> score_records;
 };
 
 bool loadUADataFromCSV(const std::string& filename);
@@ -57,13 +57,13 @@ int main() {
     std::vector<Round> rounds;
 
     for (size_t i = 0; i + 1 < UAData::names.size(); i += 2) {
-        Recode r1 = {
+        record r1 = {
             UAData::names[i],
             UAData::card_types[i],
             UAData::tiers[i],
             UAData::results_iswin[i]
         };
-        Recode r2 = {
+        record r2 = {
             UAData::names[i + 1],
             UAData::card_types[i + 1],
             UAData::tiers[i + 1],
@@ -84,28 +84,28 @@ int main() {
     for (size_t i = 0; i < rounds.size(); ++i) {
         const auto& round = rounds[i];
         // std::cout << "Round " << i + 1 << ":\n";
-        // std::cout << "  Player 1: " << round.recode1.playerName
-        //         << ", Card: " << round.recode1.cardType
-        //         << ", Tier: " << round.recode1.tier
-        //         << ", Result: " << (round.recode1.result ? "Win" : "Loss") << "\n";
-        // std::cout << "  Player 2: " << round.recode2.playerName
-        //         << ", Card: " << round.recode2.cardType
-        //         << ", Tier: " << round.recode2.tier
-        //         << ", Result: " << (round.recode2.result ? "Win" : "Loss") << "\n\n";
-        float tier_difference = std::abs(round.recode1.tier - round.recode2.tier);
+        // std::cout << "  Player 1: " << round.record1.playerName
+        //         << ", Card: " << round.record1.cardType
+        //         << ", Tier: " << round.record1.tier
+        //         << ", Result: " << (round.record1.result ? "Win" : "Loss") << "\n";
+        // std::cout << "  Player 2: " << round.record2.playerName
+        //         << ", Card: " << round.record2.cardType
+        //         << ", Tier: " << round.record2.tier
+        //         << ", Result: " << (round.record2.result ? "Win" : "Loss") << "\n\n";
+        float tier_difference = std::abs(round.record1.tier - round.record2.tier);
         // std::cout << "tier_difference: " << tier_difference << "\n";
-        // std::cout << "tier_difference: " << round.recode1.tier - round.recode2.tier << "\n";
+        // std::cout << "tier_difference: " << round.record1.tier - round.record2.tier << "\n";
         int player1_score = 0;
         int player2_score = 0;
-        if (tier_difference > 0 && ((round.recode1.result == 0 && (round.recode1.tier<round.recode2.tier))||
-        (round.recode1.result == 1) && (round.recode1.tier>round.recode2.tier))) {
+        if (tier_difference > 0 && ((round.record1.result == 0 && (round.record1.tier<round.record2.tier))||
+        (round.record1.result == 1) && (round.record1.tier>round.record2.tier))) {
             // std::cout << "Trigger complex score calculation" << "\n";
             player1_score = 10 + static_cast<int>(tier_difference * 10);
         } else {
             // std::cout << "Trigger simple score calculation" << "\n";
             player1_score = 10;
         }
-        if (round.recode1.result == 0) player1_score = -player1_score;
+        if (round.record1.result == 0) player1_score = -player1_score;
         player2_score = - player1_score;
 
         // Test case
@@ -113,11 +113,11 @@ int main() {
             std::cout << "Score sum wrong";
             return -1;
         }
-        if ((player1_score > 0 && round.recode1.result == 0) || (player2_score > 0 && round.recode2.result == 0)) {
+        if ((player1_score > 0 && round.record1.result == 0) || (player2_score > 0 && round.record2.result == 0)) {
             std::cout << "player score should be negative";
             return -1;
         }
-        if ((player1_score < 0 && round.recode1.result != 0) || (player2_score < 0 && round.recode2.result != 0)) {
+        if ((player1_score < 0 && round.record1.result != 0) || (player2_score < 0 && round.record2.result != 0)) {
             std::cout << "player score should be positive";
             return -1;
         }
@@ -125,32 +125,32 @@ int main() {
         // std::cout << "player2_score: " << player2_score << "\n";
 
         // --- Store score into Player objects ---
-        Player* p1 = findPlayer(Players, round.recode1.playerName);
-        Player* p2 = findPlayer(Players, round.recode2.playerName);
+        Player* p1 = findPlayer(Players, round.record1.playerName);
+        Player* p2 = findPlayer(Players, round.record2.playerName);
 
         for (auto& p : Players) {
             // Add 0 for players not in the round
-            if (p.name != round.recode1.playerName && p.name != round.recode2.playerName) {
-                p.score_recodes.push_back(0);
+            if (p.name != round.record1.playerName && p.name != round.record2.playerName) {
+                p.score_records.push_back(0);
                 continue;
             }
             if (p1 && p.name == p1->name) {
-                p.score_recodes.push_back(player1_score);
+                p.score_records.push_back(player1_score);
                 p.score += player1_score;
                 if (p.score < 0) {
                     p.score = 0;
                 }
                 p.gamesPlayed++;
-                if (round.recode1.result) p.wins++; else p.losses++;
+                if (round.record1.result) p.wins++; else p.losses++;
             }
             if (p2 && p.name == p2->name) {
-                p.score_recodes.push_back(player2_score);
+                p.score_records.push_back(player2_score);
                 p.score += player2_score;
                 if (p.score < 0) {
                     p.score = 0;
                 }
                 p.gamesPlayed++;
-                if (round.recode2.result) p.wins++; else p.losses++;
+                if (round.record2.result) p.wins++; else p.losses++;
             }
         }
 
@@ -159,7 +159,7 @@ int main() {
         //             << " | Total Score: " << p.score
         //             << " | WinRate: " << p.winRate * 100 << "%"
         //             << " | Scores per round: ";
-        //     // for (int s : p.score_recodes) std::cout << s << " ";
+        //     // for (int s : p.score_records) std::cout << s << " ";
         //     std::cout << "\n";
         // }
         // std::cout << "Press Enter to Continue"; 
@@ -173,7 +173,7 @@ int main() {
                 << " | Total Score: " << p.score
                 << " | WinRate: " << p.getWinRate() * 100 << "%";
                 // << " | Scores per round: ";
-        // for (int s : p.score_recodes) std::cout << s << " ";
+        // for (int s : p.score_records) std::cout << s << " ";
         std::cout << "\n";
     }
 
