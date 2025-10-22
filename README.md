@@ -119,7 +119,7 @@ tier_difference > 0 && ((round.record1.result == 0 && (round.record1.tier<round.
 ```
 
 ## Conclusion
-The **`stas_analysis.cpp.cpp`** handles the following analysis.  
+The **`stas_analysis.cpp`** handles the following analysis.  
 The following table shows the performance when two players use different tier cards:
 
 | Tier Difference | Rounds | Win Rate | EV |
