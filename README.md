@@ -28,23 +28,23 @@ However, the game host's records are inconsistent. Missing tier, same player or 
 ### Raw Data Example
 Below are examples of the unprocessed data as recorded by the game host:
 ```
-YMH:紫坂 T1.5 W +10\
-YWH:手指 T1.5 -10
+臭:紫坂 T1.5 W +10
+YWH 手指 T1.5 -10
 
-YMH:黃坂 T1.5 L-10\
+YMH 黃坂 T1.5 L-10
 YWH:早乙女T1.5 W+10
 
-YMH:綠雀頭 T1.5 W+10\
-Eric:黃EMT T1.5 L-10
+YMH :綠雀頭 T1.5 W+10
+Eric: 黃EMT T1.5 L-10
 
-YWH:早乙女 T1.5 -10\
-Francis:紫EMT T1.5 +10
+YWH:早乙女 T1.5 -10
+Francis :紫EMT +10
 
-YWH:兵長 T2 -10\
-Francis:忍野 T1.5 +10
+YWH:兵長 T2 -10
+Francis 忍野 T1.5 10
 
-YWH:早乙女 T1.5 -10 （先功 AP抽4次0 零費）\
-Eric:黃EMT T1.5 +10
+YWH: 早乙女 T1.5 -10 （先功 AP抽4次0 零費
+Eric 黃EMT T1.5 +10
 ```
 
 ## Clean and Organise Data
