@@ -1,0 +1,304 @@
+Ray 黃怪8 t1.5 L-10
+Francis 紫物語 t1.5 W+10
+
+Francis 忍野 t1.5 W+10
+Eric 紫物語 t2.5 L-10
+
+YWH 紅巨 T1.5 L-10
+Ray 電王 T1.5 W+10
+
+YWH 早乙女 T1.5 L-20
+Ray 555 T2.5 W+20
+
+YWH 手指 T1.5 W+10
+Eric 紫物語 T2.5 L-10
+
+YWH 手指 T1.5 W+10
+Francis 忍野 T1.5 L-10
+
+Francis 忍野 T1.5 W+10
+Ray 電王 T1.5 L-10
+
+Eric 羽川 T2.5 W+20
+Ray 電王 T1.5 L-20
+
+Eric 黃EMT T1.5 W+10
+Francis 忍野 T1.5 L-10
+
+YWH 紅巨人 T1.5 W+10
+Eric 黃EMT T1.5 L-10
+
+Eric:黃EMT T1.5 L-10
+Francis:紫EMT T1.5 W+10
+
+YMH:紫坂 T1.5 W +10
+YWH:手指 T1.5  -10
+
+YMH:黃坂 T1.5 L-10
+YWH:早乙女T1.5 W+10
+
+YMH:綠雀頭 T1.5 W+10
+Eric:黃EMT T1.5 L-10
+
+YWH:早乙女 T1.5 -10
+Francis:紫EMT T1.5 +10
+
+YWH:兵長 T2 -10
+Francis:忍野 T1.5 +10
+
+YWH:早乙女 T1.5 -10 （先功 AP抽4次0 零費）
+Eric :黃EMT T1.5 +10
+
+LYP:紅劍心 T1 -15
+Eric:黃EMT T1.5 +15
+
+LYP:紅劍心 T1 +10
+Eric:黃EMT T1.5 -10
+
+LYP:紫SAO T1.5 -10
+Eric:黃EMT T1.5 +10
+
+Francis:忍野 T1.5 +10
+Ray:555 T2.5 -10
+
+YWH:早乙女 T1.5 +10
+Ray:黃怪8 T1.5 -10
+
+Lyp:千石 T2 -10
+YWH:火花 T2 +10
+
+Lyp:千石 T2 +10
+YWH:火花 T2-10
+
+Lyp:紅劍心 T1 +10
+YWH:紅巨 T1.5 -10
+
+Eric:黃EMT T1.5  -10
+Francis:紫EMT T1.5  +10
+
+Eric:黃EMT T1.5 -10
+Francis:紫EMT T1.5 +10
+
+YWH:紅巨 T1.5 -10
+Francis:忍野 T1.5  +10
+
+YWH:紅巨 T1.5 +10
+Francis:忍野 T1.5  -10
+
+Week 2 start
+
+YWH:早乙女 T1.5 W +10
+Nam:藍史 T1.5 L -10
+
+Nam:蘭花 T1.5 W +10
+YWH 紅巨 T1.5 L -10
+
+YWH 手指 T1.5 L -20
+Nam:綠史 T2.5 W +20
+
+Nam 蘭花T1.5 L -10
+Francis:忍 T1.5 W +10
+
+Nam:紫史 T2 L -10
+Francis:忍 T1.5 W +10
+
+Francis:紫EMT T1.5 W +10
+Nam:龍女 T2.5 L -10
+
+Nam:鬼人 t2.5 W +10
+Eric:紫物 t2.5 L -10
+
+Nam:黃小㘣 t1.5 W +10
+Lyp:千石 t2 L -10
+
+Lyp:紅劍 t1 L -15
+Nam:藍史 t1.5 W +15
+
+Francis:忍野 T1.5 w +10
+Lyp:綠一拳 T1.5 -10
+
+Francis:忍野 T1.5 w +10
+Lyp:綠一拳 T1.5 -10
+
+YMH:紫坂 T1.5 +10
+YWH:火花 T2 -10
+
+Lyp:綠一拳 t1.5 -10
+YMH:紫坂 t1.5+10
+
+Lyp: 綠一拳 t1.5 +10
+YMH:黃綠谷 t2 -10
+
+Lyp:紅劍 T1 +10
+Ray:黃怪8 t1.5 -10
+
+Lyp:紅劍 T1 +10
+Ray:黃怪8  t1.5 -10
+
+Lyp:紫唱 T1.5 -10
+Ray:紫re:0 T1.5 +10
+
+YWH:空挺隊 T2.5 +10
+Eric:紫物 T2.5 -10
+
+YWH:紅巨 T1.5 +10
+Eric:紫物 T2.5 -10
+
+YWH:兵長 T2 -15
+Eric:紫物 T2.5 +15
+
+Francis:忍野 T1.5 -15
+YWH:火花 T2 +15
+
+Eric:紫物 T2.5 L -10
+Nam:紫史 T2 W +10
+
+Nam:紫小圓 T3 W +15
+Eric:紫物 T2.5 L -15
+
+Eric:紫物 T2.5 W +10
+Nam:龍女 T2.5 W -10
+
+YWH:熱氣 T1.5 -20
+Nam:龍女 T2.5 +20
+
+YWH:火花 T2 -15
+Nam:鬼人 T2.5 +15
+
+YWH:上校 T2.5 -15
+Nam:紫小圓 T3 +15
+
+Francis:忍野 T1.5 W +10
+Nam:紫小圓 T3 -10
+
+Francis:忍野 T1.5 W +10
+Nam:紫小圓 T3 -10
+
+Francis:忍野 T1.5 W +10
+Nam:蘭花 T1.5 -10
+
+YWH 熱氣  T1.5 -10
+YMH 雀頭 T1.5 +10
+
+YWH 紫EMT T1.5 +10
+YMH:紫坂 T1.5 -10
+
+YMH:雀頭 T1.5 +10
+Francis:忍野 T1.5 -10
+
+YMH:紫坂 T1.5 +10
+Francis:鬼人T2.5 -10
+
+YMH:黃坂 T1.5 +10
+Francis:忍野 T1.5 -10
+
+YMH:黃追 t1.5 -10
+YWH:綠一拳 t1.5 +10
+
+YMH:雀頭 T1.5 +10
+Eric:羽川 T2.5 -10
+
+YMH:黃坂T1.5 -10
+Eric 黃EMT T1.5 +10
+
+YMH:紫坂 T1.5 -10
+Eric:八九 T1.5 +10
+
+Francis:鬼人 T2.5 Win +20
+Eric:八九寺 T1.5 lose-20
+
+Eric:羽川 T2.5 -10
+Ray:電王 T1.5 +10
+
+Francis:紫EMT t1.5 win +10
+Ray:黃怪8  t1.5 lose -10
+
+Francis:忍野 t1.5 win +10
+Ray:碧翠詩 t1.5 lose -10
+
+Francis:紫EMT t1.5 win +10
+Ray:電王 t1.5 lose -10
+
+Ray:黃怪8 t1.5 -10
+YWH:綠一拳 t1.5 +10
+
+Ray:電王 t1.5 -10
+YWH:熱氣 t1.5 +10
+
+Ray:555 t2.5 -10
+YWH:紅巨 t1.5 +10
+
+Eric:羽川 T2.5 +20
+Ray:追擊 T1.5 -20
+
+Week 3 Start
+
+Ray:紫碧 T1.5 +10
+Eric:八九 T1.5 -10
+
+Ray:小圓 T1.5 -10
+YMH:紫坂 T1.5 +10
+
+Ray:小圓 T1.5 -10
+YMH:雀頭 T1.5 +10
+
+Ray:小圓 T1.5 -10
+YMH:雀頭 T1.5 +10
+
+Lyp:紅劍心 T1 -15
+Nam:藍史 T1.5 +15
+
+Lyp:綠一拳 T1.5 -15
+Nam:紫史 T2 +15
+
+Lyp:米特 T2 -10
+Nam:蘭花 T1.5 +10
+
+YMH:紫坂 T1.5 +10
+Nam:綠史 T2.5 -10
+
+Eric: 黃EMT T1.5  -10
+Francis 忍野忍 T1 +10
+
+Eric: 八九 t1.5  +10
+Francis: 紫EMT t1.5 -10
+
+Eric: 羽川 t2.5 +25
+Francis : 忍野忍 t1 -25
+
+Lyp:GGO T1.5 -10
+YWH:熱氣 T1.5 +10
+
+TTW:忍野 T1 +10
+YWH:綠一拳 T1.5 -10
+
+TTW:手指 T1.5 +10
+YWH:火花 T2 -10
+
+TTW:忍野 T1 -15
+YWH:紅巨 T1.5 +15
+
+Eric:八九 T1.5 +10
+Francis:紫EMT T1 -10
+
+Ray:綠怪8 T2.5 -10
+Francis:紫EMT T1.5 +10
+
+YWH:紫坂 T1.5 +10
+Eric:八九 T1.5 -10
+
+Ray:Betty t1.5 +10
+Francis:紫EMT T1.5 -10
+
+YWH:紅巨 T1.5 +10
+Eric:羽川 T2.5 -10
+
+YWH:紫坂 T1.5 +15
+Francis:忍野 T1 -15
+
+YWH:紅巨 T1.5 +10
+Francis:紫EMT T1.5 -10
+
+YWH:火花 T2 -10
+Francis:雷拉T1 +10
+
