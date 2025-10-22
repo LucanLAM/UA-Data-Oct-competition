@@ -61,7 +61,7 @@ YMH,綠雀頭,1.5,1
 
 Here, **1** represents a win and **0** represents a loss.
 
-Since the original data is often inconsistent or incomplete, the program attempts to interpret and extract valid information automatically. If it cannot determine the correct structure, it outputs the problematic line and prompts the user to review and modify it manually.
+Since the original data is often inconsistent or incomplete, the program attempts to automatically interpret and extract valid information. If it cannot determine the correct structure, it outputs the problematic line and prompts the user to review and manually modify it.
 
 ### Separator Detection
 The program attempts to identify **separators** that divide each piece of information within a raw data line.\
@@ -75,13 +75,13 @@ The candidates for the separator are the following:
 | separator 2 | "T" or "t" followed by a number|
 | separator 3 | "w", "l", "+", "-"             |
 
-If the program cannot detect the required separators, it cannot correctly extract the data fields. In such cases, the line will be considered as **unreadable**, and the program will prompt the user to manually review and modify the entry.
+If the program cannot detect the required separators, it will not be able to correctly extract the data fields. In such cases, the line will be considered as **unreadable**, and the program will prompt the user to manually review and modify the entry.
 
 ## Check duplication
-The file **`UA_dup.cpp`** is responsible for generating a unique list of player names and card types. Since the game host occasionally used inconsistent naming conventions (e.g., `Ray` and `RAY`, `Francis` and `FFC`, `羽川` and `紫物語`), the program helps identify potential duplicates so the user can review and unify them manually.
+The file **`UA_dup.cpp`** is responsible for generating a unique list of player names and card types. Since the game host occasionally used inconsistent naming conventions (e.g., `Ray` and `RAY`, `Francis` and `FFC`, `羽川` and `紫物語`), the program helps identify potential duplicates, allowing the user to review and unify them manually.
 
 ## Score Calculation
-The file **`UA_score`** handles score calculation.  
+The file **`UA_score`** handles the calculation of scores.  
 Each player starts with an initial score of **40**. The card tier ranking ranges from **1 (highest)** to **5 (lowest)**, increasing in increments of **0.5**. When a player wins, they gain points while their opponent loses the same amount. The total change in score for both players in a round always sums to **zero**. However, a player’s score cannot drop below **0** — for example, if a player with 10 points loses a round and should lose 20 points, their final score will be set to **0**.
 
 The score calculation is divided into two parts:
@@ -128,3 +128,5 @@ The following table shows the performance when two players use different tier ca
 | 0.5 | 26 | 46.15% | 1.53846 |
 | 1 | 19 | 31.58% | -0.526316 |
 | 1.5 | 3 | 33.33% | 1.66667 |
+
+p.s. This project was created to help me relearn and strengthen my C++ skills. It took about two working days (around 16 hours) to complete.
