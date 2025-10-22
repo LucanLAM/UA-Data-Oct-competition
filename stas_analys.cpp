@@ -14,7 +14,7 @@ namespace UAData {
     std::vector<bool> results_iswin;
 }
 
-struct Recode {
+struct record {
     std::string playerName;
     std::string cardType;
     float tier;
@@ -22,8 +22,8 @@ struct Recode {
 };
 
 struct Round {
-    Recode recode1;
-    Recode recode2;
+    record record1;
+    record record2;
 };
 
 struct Stats {
@@ -42,13 +42,13 @@ int main() {
     std::map<float, Stats> tier_stats;
 
     for (size_t i = 0; i + 1 < UAData::names.size(); i += 2) {
-        Recode r1 = {
+        record r1 = {
             UAData::names[i],
             UAData::card_types[i],
             UAData::tiers[i],
             UAData::results_iswin[i]
         };
-        Recode r2 = {
+        record r2 = {
             UAData::names[i + 1],
             UAData::card_types[i + 1],
             UAData::tiers[i + 1],
@@ -60,22 +60,22 @@ int main() {
     for (size_t i = 0; i < rounds.size(); ++i) {
         const auto& round = rounds[i];
         // std::cout << "Round " << i + 1 << ":\n";
-        // std::cout << "  Player 1: " << round.recode1.playerName
-        //         << ", Card: " << round.recode1.cardType
-        //         << ", Tier: " << round.recode1.tier
-        //         << ", Result: " << (round.recode1.result ? "Win" : "Loss") << "\n";
-        // std::cout << "  Player 2: " << round.recode2.playerName
-        //         << ", Card: " << round.recode2.cardType
-        //         << ", Tier: " << round.recode2.tier
-        //         << ", Result: " << (round.recode2.result ? "Win" : "Loss") << "\n\n";
-        float tier_difference = std::abs(round.recode1.tier - round.recode2.tier);
+        // std::cout << "  Player 1: " << round.record1.playerName
+        //         << ", Card: " << round.record1.cardType
+        //         << ", Tier: " << round.record1.tier
+        //         << ", Result: " << (round.record1.result ? "Win" : "Loss") << "\n";
+        // std::cout << "  Player 2: " << round.record2.playerName
+        //         << ", Card: " << round.record2.cardType
+        //         << ", Tier: " << round.record2.tier
+        //         << ", Result: " << (round.record2.result ? "Win" : "Loss") << "\n\n";
+        float tier_difference = std::abs(round.record1.tier - round.record2.tier);
         if (tier_difference > 0) {
             rounds_interested.push_back(round);
         }
         float key = std::round(tier_difference * 2) / 2.0f;
         tier_stats[key].total++;
-        if (((round.recode1.result == 0 && (round.recode1.tier<round.recode2.tier))||
-        (round.recode1.result == 1) && (round.recode1.tier>round.recode2.tier))) {
+        if (((round.record1.result == 0 && (round.record1.tier<round.record2.tier))||
+        (round.record1.result == 1) && (round.record1.tier>round.record2.tier))) {
             tier_stats[key].wins++;
         }
         
@@ -84,14 +84,14 @@ int main() {
     for (int i = 0; i < rounds_interested.size(); i++) {
         const auto& round = rounds_interested[i];
         std::cout << "Round " << i + 1 << ":\n";
-        std::cout << "  Player 1: " << round.recode1.playerName
-                << ", Card: " << round.recode1.cardType
-                << ", Tier: " << round.recode1.tier
-                << ", Result: " << (round.recode1.result ? "Win" : "Loss") << "\n";
-        std::cout << "  Player 2: " << round.recode2.playerName
-                << ", Card: " << round.recode2.cardType
-                << ", Tier: " << round.recode2.tier
-                << ", Result: " << (round.recode2.result ? "Win" : "Loss") << "\n\n";
+        std::cout << "  Player 1: " << round.record1.playerName
+                << ", Card: " << round.record1.cardType
+                << ", Tier: " << round.record1.tier
+                << ", Result: " << (round.record1.result ? "Win" : "Loss") << "\n";
+        std::cout << "  Player 2: " << round.record2.playerName
+                << ", Card: " << round.record2.cardType
+                << ", Tier: " << round.record2.tier
+                << ", Result: " << (round.record2.result ? "Win" : "Loss") << "\n\n";
     }
     int number_of_round_interested = rounds_interested.size();
     for (auto& [tier_diff, stats] : tier_stats) {
